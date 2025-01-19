@@ -7,6 +7,7 @@ import {
   UserContext,
 } from '../hooks/useUserContext'
 import '../styles/globals.css'
+import styles from './app.module.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const userContext = useUserContext()
@@ -25,10 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <UserContext.Provider value={userContext}>
-        <Header />
-        <main>
+        <main className={styles.container}>
+          <Header />
           <Component {...pageProps} />
         </main>
+        {/* アニメーションを含むためcontainerの範囲から外す */}
         <Footer />
       </UserContext.Provider>
     </>

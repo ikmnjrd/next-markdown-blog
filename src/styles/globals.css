@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './variables.css';
 
 body {
   overflow-y: scroll;
@@ -9,26 +10,12 @@ body {
 main {
   /* footerを最下部に固定表示するため */
   min-height: calc(100vh - 250.195px - 32px - 4rem);
+  color: var(--color--text-primary);
 }
 
 .header-text {
-  color: white;
-  text-shadow: -2px -2px 1px rgba(0, 0, 0, 0.25),
-    3px 3px 3px rgba(255, 255, 255, 0.5);
-}
-
-img[class^='svg-icon'],
-.footer-svg {
-  color: white;
-  filter: drop-shadow(3px 3px 3px rgba(255, 255, 255, 0.3))
-    drop-shadow(-2px -2px 1px rgba(0, 0, 0, 0.25));
-}
-
-.footer-content {
-  position: relative;
-  top: 50px;
-  height: 50px;
-  z-index: 1;
+  color: var(--color-text-primary);
+  text-shadow: var(--text-shadow-primary);
 }
 
 .wave {
